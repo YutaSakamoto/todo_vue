@@ -1,5 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+form {
+    margin-bottom: 1em;
+}
+
+input, select, button {
+    margin-top: 1em;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    border: 1px solid #000;
+    margin-bottom: 1em;
+    padding: 1em;
+}
+
 .container {
-    text-align: center;
-    max-width: 1080px;
+    width: 1080px;
     margin: 0 auto;
 }

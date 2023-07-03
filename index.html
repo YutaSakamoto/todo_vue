@@ -9,6 +9,28 @@
 <body>
     <div id="app" class="container">
         <h1>{{ today }}のToDo</h1>
+        <form @submit.prevent="addTask">
+            <input v-model="newTask.id" placeholder="ID">
+            <input v-model="newTask.name" placeholder="タスク名">
+            <input v-model="newTask.description" placeholder="詳細">
+            <select v-model="newTask.status">
+                <option disabled value="">状態を選択</option>
+                <option>未着手</option>
+                <option>進行中</option>
+                <option>完了</option>
+            </select>
+            <input v-model="newTask.completionDate" placeholder="完了予定日時">
+            <button type="submit">Add Task</button>
+        </form>
+        <ul>
+            <li v-for="task in tasks" :key="task.id">
+                <h2>{{ task.name }}</h2>
+                <p>ID: {{ task.id }}</p>
+                <p>説明: {{ task.description }}</p>
+                <p>状態: {{ task.status }}</p>
+                <p>完了予定日時: {{ task.completionDate }}</p>
+            </li>
+        </ul>
     </div>
 
     <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
